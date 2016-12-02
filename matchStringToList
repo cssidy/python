@@ -1,4 +1,4 @@
-#! /usr/bin/python3
+#! python3
 
 string = ("The moose ran in front of my car, and almost took out an eagle swooping down to catch a rat, "
           "but I swerved and narrowly missed a snake, but then a coyote jumped on my windshield with a squirrel in "
