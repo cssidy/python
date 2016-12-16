@@ -18,3 +18,9 @@ print(os.path.abspath('.'))
 path = os.getcwd()
 print(os.path.basename(path))
 print(os.path.dirname(path))
+
+calcFilePath = 'Windows/System32/calc.exe'
+print(os.path.split(calcFilePath))
+print(calcFilePath.split(os.path.sep),
+      ('/usr/bin'.split(os.path.sep)),
+      )
