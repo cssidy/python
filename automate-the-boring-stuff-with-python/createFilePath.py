@@ -26,11 +26,14 @@ print(calcFilePath.split(os.path.sep),
       )
 
 os.path.getsize(path)
-os.path.listdir(path)
+os.listdir(path)
 
+os.path.exists('/cassidy/PycharmProjects')
+os.path.isdir('/cassidy/PycharmProjects')
+os.path.isfile('/cassidy/PycharmProjects')
 
-totalSize = 0
-for filename in os.listdir(path):
-    totalSize = totalSize + os.path.getsize(os.path.join(path))
-print(totalSize)
-# 36864
+# find if there is a DVD or flash drive on Windows:
+os.path.exists('D:\\')
+
+# find if there is a DVD or flash drive on Linux:
+os.path.exists('/mnt')
