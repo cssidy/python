@@ -10,3 +10,11 @@ for filename in myFiles:
 print(os.getcwd())
 os.chdir('/home/cassidy/Documents')
 print(os.getcwd())
+
+# os.makedirs('/delicious/walnut/waffles')
+
+print(os.path.abspath('.'))
+
+path = os.getcwd()
+print(os.path.basename(path))
+print(os.path.dirname(path))
