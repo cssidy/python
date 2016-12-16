@@ -24,3 +24,13 @@ print(os.path.split(calcFilePath))
 print(calcFilePath.split(os.path.sep),
       ('/usr/bin'.split(os.path.sep)),
       )
+
+os.path.getsize(path)
+os.path.listdir(path)
+
+
+totalSize = 0
+for filename in os.listdir(path):
+    totalSize = totalSize + os.path.getsize(os.path.join(path))
+print(totalSize)
+# 36864
