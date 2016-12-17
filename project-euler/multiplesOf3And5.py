@@ -4,15 +4,29 @@
 # The sum of these multiples is 23. Find the sum of all the multiples of 3 or 5 below 1000.
 
 
-# for i in range(1000):
-#     if i % 3 == 0:
-#         print(i)
-#     elif i % 5 == 0:
-#         print(i)
+# Using a function
 
+def divisibility_test(inte):
+    sumOfinte = 0
+    for i in range(inte):
+        if i % 3 == 0:
+            print(i)
+            sumOfinte = sumOfinte + i
+        elif i % 5 == 0:
+            print(i)
+            sumOfinte = sumOfinte + i
+    print(sumOfinte)
+
+divisibility_test(1000)
+
+# Using a While loop
 
 i = 0
+sumOfi = 0
 while i < 1000:
     if i % 3 == 0 or i % 5 == 0:
         print(i)
+        sumOfi = sumOfi + i
     i += 1
+
+print(sumOfi)
