@@ -9,27 +9,6 @@
 # Find all fibonacci numbers from 1 - 4 million, put them in memo
 
 
-def F(n):
-    if n == 0:
-        return 0
-    elif n == 1:
-        return 1
-    else:
-        return F(n-1)+F(n-2)
-F(n)
-
-# def fibo(n):
-#     memo = {}
-#     if n in memo:
-#         return memo[n]
-#     elif n <= 40000000:
-#         f = 1
-#     else:
-#         f = fibo(n - 1) + fibo(n - 2)
-#         memo[n] = f
-#     return f
-#
-# fibo(0)
 
 
 
