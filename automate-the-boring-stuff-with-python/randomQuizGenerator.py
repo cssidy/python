@@ -28,7 +28,7 @@ if __name__ == '__main__':
         answerKeyFile = open('capitalsquiz_answers%s.txt' % (quizNum + 1), 'w')
 
         # Write out the header for the quiz.
-        quizFile.write('Name:\n\n\Date:\n\nPeriod:\n\n')
+        quizFile.write('Name:\n\nDate:\n\nPeriod:\n\n')
         quizFile.write((' ' * 20) + 'State Capitals Quiz (Form %s)' % (quizNum + 1))
         quizFile.write('\n\n')
 
@@ -41,14 +41,21 @@ if __name__ == '__main__':
             for questionNum in range(50):
 
                 # Get right and wrong answers
-                correctAnswer = capitals[states[questNum]]
+                correctAnswer = capitals[states[questionNum]]
                 wrongAnswers = list(capitals.values())
                 del wrongAnswers[wrongAnswers.index(correctAnswer)]
                 wrongAnswers = random.sample(wrongAnswers, 3)
                 answerOptions = wrongAnswers + [correctAnswer]
                 random.shuffle(answerOptions)
 
-                # TODO: Write the question and answer options to the quiz file
+                # Write the question and answer options to the quiz file
+                quizFile.write('%s. What is the capital of %s?\n' % (questionNum + 1, states[questionNum]))
+                for i in range(4):
+                    quizFile.write('    %s. %s\n' % ('ABCD'[i], answerOptions[i]))
+                quizFile.write('\n')
 
-                # TODO: Write the answer key to a file.
+                # Write the answer key to a file.
+                answerKeyFile.write('%s. %s\n' % (questionNum + 1, 'ABCD' [answerOptions.index(correctAnswer)]))
+            quizFile.close()
+            answerKeyFile.close()
 
