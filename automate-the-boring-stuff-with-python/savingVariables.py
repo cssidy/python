@@ -3,6 +3,7 @@
 import shelve
 import pprint
 
+
 shelfFile = shelve.open('mydata')
 cats = ['Zophie', 'Pooka', 'Simon']
 shelfFile['cats'] = cats
@@ -22,3 +23,13 @@ pprint.pformat(cats)
 fileObj = open('myCats.py', 'w')
 fileObj.write('cats = ' + pprint.pformat(cats) + '\n')
 fileObj.close()
+
+
+import myCats
+
+myCats.cats
+# dictionary
+myCats[0]
+# Zophie, chubby
+myCats[0]['name']
+# Zophie
