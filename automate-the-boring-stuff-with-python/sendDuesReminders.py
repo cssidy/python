@@ -24,7 +24,15 @@ for r in range(2, sheet.get_highest_row() + 1):
 smtpObj = smtplib.SMTP('smtp.gmail.com', 587)
 smtpObj.ehlo()
 smtpObj.starttls()
-smtpObj.login('user@gmail.com', sys.argv[1])
+smtpObj.login('member@gmail.com', sys.argv[1])
 
-# TODO: Send out reminder emails
+# Send out reminder emails
+for name, email in unpaidMembers.items():
+    body = "Subject: %s dues unpaid.\nDear %s,\nRecords show that you have not paid dues for %s. Please make this ' \
+           'payment as soon as possible. Thank you!'" % (latestMonth, name, latestMonth)
+    print('Sending email to %s...' % email)
+    sendMailStatus = smtpObj.sendmail('organization@gmail.com', email, body)
 
+    if sendMailStatus != {}:
+        print('There was a problem sending email to %s: %s' % (email, sendMailStatus))
+smtpObj.quit()
