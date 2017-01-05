@@ -20,7 +20,11 @@ for r in range(2, sheet.get_highest_row() + 1):
         email = sheet.cell(row=r, column=2).value
         unpaidMembers[name] = email
 
-# TODO: Log in to email account
+# Log in to email account
+smtpObj = smtplib.SMTP('smtp.gmail.com', 587)
+smtpObj.ehlo()
+smtpObj.starttls()
+smtpObj.login('user@gmail.com', sys.argv[1])
 
 # TODO: Send out reminder emails
 
