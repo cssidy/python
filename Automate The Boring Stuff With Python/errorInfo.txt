@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/cassidy/Projects/python/Automate The Boring Stuff With Python/errorExample.py", line 10, in bacon
+    raise Exception('This is an error message.')
+Exception: This is an error message.
